@@ -239,26 +239,22 @@ body:not(.user-is-tabbing) a:focus {
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
-.btn:hover::after,
-.btn:focus::after {
-    right: 0;
-    background: var(--pink);
-}
 
 .btn--pink {
     background: #4ec03b;
-    transition: all 0.2s;
+    transition: all 0.5s;
     border-radius: 5px;
     color: black;
 }
 
-.btn--pink::after {
-    display: none;
-}
 
 .btn--pink:hover,
 .btn--pink:focus {
     background: transparent;
+    color: white;
+    border-color: #4ec03b;
+    border-style: solid;
+    border-radius: 5px;
 }
 
 .link__text {
@@ -338,7 +334,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: var(--gutter-normal) 0;
 }
 
@@ -391,13 +387,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-    color: var(--pink);
+    color: #4ec03b;
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--pink);
+    background: #4ec03b;
 }
 
 /* --------------------------------------- */
@@ -417,6 +413,7 @@ body:not(.user-is-tabbing) a:focus {
 .header__text {
     position: absolute;
     top: 50%;
+    left: 30%;
     transform: translateY(-50%);
 }
 
