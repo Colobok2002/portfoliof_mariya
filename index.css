@@ -35,7 +35,6 @@
     --line-height-small: 1.2;
 
     --black: #000;
-    --pink: #ff3258;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
@@ -58,6 +57,11 @@ html {
     font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x:hidden;
+    max-width: 100%;
+    
+    
+
 }
 
 @media(max-width: 1000px) {
@@ -73,13 +77,18 @@ body {
     color: var(--white-1);
     line-height: var(--line-height-normal);
     background: var(--black);
-    overflow-x: hidden;
+    overflow: auto;
+    max-width: 100%;
+    overflow-x: hidden
 }
 
 .row {
     max-width: var(--container-max-width);
     margin: 0 auto;
+    
 }
+
+
 
 @media(max-width: 1340px) {
     .row {
@@ -107,9 +116,65 @@ body {
 
 section {
     padding: var(--gutter-huge) 0;
-    border-bottom: var(--border-light);
+    transform: translate(100px, 0px);
+    opacity: 0;
+    transition: all 3s;
+
 }
 
+.element-show{
+
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 3s;
+}
+
+.my_work {
+    
+    margin-top: 70px;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all 3s;
+
+}
+
+.my_work.element-show{
+    transform: scale(1);
+    opacity: 1;
+    transition: all 2s;
+}
+
+.work_left {
+    
+    padding: var(--gutter-huge) 0;
+    transform: translate(-500px, 0px);
+    opacity: 0;
+    transition: all 3s;
+
+}
+
+.work_rite {
+    padding: var(--gutter-huge) 0;
+    transform: translate(500px, 0px );
+    opacity: 0;
+    transition: all 3s;
+
+}
+
+.work_left.element-show{
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 3s;
+}
+
+.work_rite.element-show{
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 3s;
+}
+
+
+      
 img {
     object-fit: contain;
     max-width: 100%;
@@ -124,6 +189,7 @@ h2,
 h3 {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
+    text-align: center;
     line-height: var(--line-height-small);
     color: var(--white);
 }
@@ -147,7 +213,7 @@ h2 {
 
 h2::after {
     content: '';
-    display: block;
+    display: none;
     height: 2px;
     width: 10rem;
     background: #4ec03b;
@@ -241,10 +307,14 @@ body:not(.user-is-tabbing) a:focus {
 
 
 .btn--pink {
-    background: #4ec03b;
+    background: rgba(0, 0, 0, 0);
     transition: all 0.5s;
     border-radius: 5px;
-    color: black;
+    color: white;
+    width: 285px;
+    text-align: center;
+    border-color: white;
+    border-style: solid;
 }
 
 
@@ -411,10 +481,30 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header__text {
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translateY(-50%);
+    width : 800px;
+    margin: 250px auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    transform: translate(-1000px, 0px);
+    opacity: 0;
+    transition: all 2s ;
+}
+.header__text-box.row.element-show .header__text{
+
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 2s;
+}
+
+
+.header__text h1 {
+    font-size: var(--font-size-large);
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    line-height: var(--line-height-small);
+    color: var(--white);
 }
 
 .header__text p {
@@ -440,7 +530,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__box {
     display: flex;
-    align-items: center;
+    
 }
 
 @media(max-width: 900px) {
@@ -520,7 +610,6 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 1240px) {
     .client__logos {
-        overflow-x: scroll;
         padding: var(--gutter-normal);
     }
 
@@ -548,6 +637,30 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
     margin-bottom: var(--gutter-normal);
+    transform: translate(-1000px, 0px);
+    opacity: 0;
+    transition: all 1.5s;
+    
+}
+
+.about__text{
+    
+    margin-bottom: var(--gutter-normal);
+    opacity: 0;
+    transition: all 1.5s ;
+}
+
+.about__content.element-show .about__photo-container {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: opacity,transform 1.5s;
+}
+.about__content.element-show .about__text{
+
+    opacity: 1;
+    transition: all 1.5s;
+    font-size: 20px;
+    margin-top: auto;
 }
 
 @media(min-width: 901px) {
@@ -566,7 +679,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .contact__info {
-    max-width: var(--container-medium-width);
+    text-align: center;
 }
 
 /* --------------------------------------- */

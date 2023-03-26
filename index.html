@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id = 'html'>
 
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,8 @@
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Put your name, skills and some coding keywords" />
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
 </head>
 
 <body>
@@ -38,13 +40,10 @@
         </ul>
       </nav>
     </div>
+    <div class="test"></div>
     <div class="header__text-box row">
       <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Fyodorova Mariya</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
+        <h1>Fyodorova Mariya</h1>
         <p>Контент менеджер</p>
         <a href="#contact" class="btn btn--pink">Свзаться со мной</a>
       </div>
@@ -54,12 +53,120 @@
   <main role="main">
 
     <!-- ***** Work ***** -->
+    <h2 class = "my_work">Мои кейсы</h2>
 
-    <section class="work" id="work">
+    <section class="work_rite" id="work">
       <div class="row">
-        <h2>Мои кейсы</h2>
+        
         <div class="work__boxes">
 
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Portfolio Template</h3>
+              <p>
+                A free Open Source Portfolio for anyone to use for free.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>Parcel</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>   
+        </div>
+      </div>
+    </section>
+
+    <section class="work_left" id="work">
+      <div class="row">
+        <div class="work__boxes">
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Portfolio Template</h3>
+              <p>
+                A free Open Source Portfolio for anyone to use for free.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>Parcel</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>   
+        </div>
+      </div>
+    </section>
+
+    <section class="work_rite" id="work">
+      <div class="row">
+        
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Portfolio Template</h3>
+              <p>
+                A free Open Source Portfolio for anyone to use for free.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>Parcel</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>   
+        </div>
+      </div>
+    </section>
+
+    <section class="work_left" id="work">
+      <div class="row">
+        <div class="work__boxes">
           <!-- Each div with the work__box class is a project. -->
 
           <div class="work__box">
@@ -99,12 +206,15 @@
         <h2>Clients</h2>
         <div class="client__logos">
           <!-- Add logos of the clients or companies you'have worked with. -->
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
+          <div><img src="./images/ronjones.png" class="client__logo" alt="Company 2" /></div>
+          <div><img src="./images/goldengrid.png" class="client__logo" alt="Company 3" /></div>
+          <div><img src="./images/bullseye.png" class="client__logo" alt="Company 1" /></div>
+          <div><img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" /></div>
+          <div><img src="./images/fastlane.png" class="client__logo" alt="Company 3" /></div>
+          <div><img src="./images/chippy.png" class="client__logo" alt="Company 1" /></div>
+          <div><img src="./images/ronjones.png" class="client__logo" alt="Company 2" /></div>
+          <div><img src="./images/goldengrid.png" class="client__logo" alt="Company 3" /></div>
+          <div><img src="./images/bullseye.png" class="client__logo" alt="Company 1" /></div>
         </div>
       </div>
     </section>
@@ -118,7 +228,7 @@
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
               nostrum illo harum blanditiis, tenetur eum suscipit cupiditate
               in vel, ex quam quidem quos mollitia labore aut sunt eius
               ratione molestiae fuga veniam facere similique voluptate.
@@ -186,7 +296,7 @@
 
       <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
       <p>
-        &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
+        &copy; 2023 -  Developed by <a href="https://t.me/Ilyshaa20" class="link">Barinof</a>.
       </p>
       <div class="footer__github-buttons">
         <iframe
@@ -201,6 +311,19 @@
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
   <script src="./index.js"></script>
+  <script src="animation.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script>
+    $('.client__logos').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 1300,
+    });
+</script>
 </body>
 
 </html>
