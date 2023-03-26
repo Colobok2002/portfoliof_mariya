@@ -1,12 +1,14 @@
 
-
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en" id = 'html'>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="{% static '/images/favicon.png' %}"/>
 
   <!-- Put your site title here -->
   <title>
@@ -16,8 +18,8 @@
   <meta name="description" content="Add small description of yourslef.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="{% static '/index.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
 
 </head>
 
@@ -57,9 +59,7 @@
 
     <section class="work_rite" id="work">
       <div class="row">
-        
         <div class="work__boxes">
-
           <!-- Each div with the work__box class is a project. -->
 
           <div class="work__box">
@@ -76,16 +76,13 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                <a href="/{id}" target="_blank" class="link__text">
+                  Подробннее <span>&rarr;</span>
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+              <img src="{% static 'images/project-1.png' %}" class="work__image" alt="Project 1" />
             </div>
           </div>   
         </div>
@@ -111,94 +108,18 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                <a href="/{id}" target="_blank" class="link__text">
+                  Подробннее <span>&rarr;</span>
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+              <img src="{% static 'images/project-1.png' %}" class="work__image" alt="Project 1" />
             </div>
           </div>   
         </div>
       </div>
     </section>
-
-    <section class="work_rite" id="work">
-      <div class="row">
-        
-        <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Portfolio Template</h3>
-              <p>
-                A free Open Source Portfolio for anyone to use for free.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>SCSS</li>
-                <li>JavaScript</li>
-                <li>Parcel</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>   
-        </div>
-      </div>
-    </section>
-
-    <section class="work_left" id="work">
-      <div class="row">
-        <div class="work__boxes">
-          <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Portfolio Template</h3>
-              <p>
-                A free Open Source Portfolio for anyone to use for free.
-              </p>
-              <ul class="work__list">
-                <li>HTML</li>
-                <li>SCSS</li>
-                <li>JavaScript</li>
-                <li>Parcel</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>   
-        </div>
-      </div>
-    </section>
-
     <!-- ***** Clients ***** -->
 
     <section class="client" id="clients">
@@ -206,15 +127,15 @@
         <h2>Clients</h2>
         <div class="client__logos">
           <!-- Add logos of the clients or companies you'have worked with. -->
-          <div><img src="./images/ronjones.png" class="client__logo" alt="Company 2" /></div>
-          <div><img src="./images/goldengrid.png" class="client__logo" alt="Company 3" /></div>
-          <div><img src="./images/bullseye.png" class="client__logo" alt="Company 1" /></div>
-          <div><img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" /></div>
-          <div><img src="./images/fastlane.png" class="client__logo" alt="Company 3" /></div>
-          <div><img src="./images/chippy.png" class="client__logo" alt="Company 1" /></div>
-          <div><img src="./images/ronjones.png" class="client__logo" alt="Company 2" /></div>
-          <div><img src="./images/goldengrid.png" class="client__logo" alt="Company 3" /></div>
-          <div><img src="./images/bullseye.png" class="client__logo" alt="Company 1" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 2" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 3" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 1" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 1" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 3" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 1" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 2" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 3" /></div>
+          <div><img src="{% static 'images/zag_clients.png' %}" class="client__logo" alt="Company 1" /></div>
         </div>
       </div>
     </section>
@@ -234,12 +155,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
               ratione molestiae fuga veniam facere similique voluptate.
             </p>
             <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
           </div>
 
           <div class="about__photo-container">
             <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/syed-ali-hussnain.jpg" alt="" />
+            <img class="about__photo" src="{% static 'images/syed-ali-hussnain.jpg' %}" alt="" />
           </div>
         </div>
       </div>
@@ -298,30 +218,46 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
       <p>
         &copy; 2023 -  Developed by <a href="https://t.me/Ilyshaa20" class="link">Barinof</a>.
       </p>
-      <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div>
     </div>
   </footer>
 
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
-  <script src="./index.js"></script>
-  <script src="animation.js"></script>
+  <script src="{% static 'index.js' %}"></script>
+  <script src="{% static 'animation.js' %}"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
   <script>
     $('.client__logos').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
+      infinite: true,
+      slidesToShow: 6,
       autoplay: true,
-      autoplaySpeed: 1300,
+      autoplaySpeed: 1500,
+      arrows: false ,
+      responsive: [
+        {
+          breakpoint: 700,
+          settings: {
+            infinite: true,
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false ,
+          }
+        },
+        {
+          breakpoint: 450,
+          settings: {
+            infinite: true,
+            slidesToShow: 2,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false ,
+          }
+        }
+    ]
     });
 </script>
 </body>
