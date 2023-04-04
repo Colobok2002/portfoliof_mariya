@@ -22,7 +22,7 @@ def index(request):
 
     keys = Keys.objects.filter(available= True)
 
-    if len(parthers) == 0 :
+    if len(keys) == 0 :
         keys = False
 
     args['fm'] = fm

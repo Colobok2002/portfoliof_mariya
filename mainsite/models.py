@@ -1,6 +1,8 @@
 from django.db import models
 from random import randint
 from django.urls import reverse
+from datetime import datetime
+import django
 
 
 class For_me(models.Model):
@@ -79,6 +81,7 @@ class Images (models.Model):
 class Zaiavki(models.Model):
 
     name = models.CharField(max_length=200, db_index=True,verbose_name='Имя')
+    date = models.DateField(blank=True, verbose_name='Дата создания', default=django.utils.timezone.now)
     svaz = models.CharField(max_length=200,blank=True, verbose_name='Способ связи')
     description = models.TextField(blank=True, verbose_name='Описание заказа')
     status = models.TextField(blank=True, verbose_name='Стастус заявки')
@@ -95,7 +98,7 @@ class Zaiavki(models.Model):
 class Nevs(models.Model):
 
     name = models.CharField(max_length=200, db_index=True,verbose_name='Имя')
-    date = models.DateField(blank=True, verbose_name='Дата создания')
+    date = models.DateField(blank=True, verbose_name='Дата создания',default=django.utils.timezone.now)
     logo = models.ImageField(upload_to=f'image/Nevs/{randint(1, 10000)}', blank=True, verbose_name='Обложка')
     description = models.TextField(blank=True, verbose_name='Тизер новости')
     main_text = models.TextField(blank=True, verbose_name='Тело новости')

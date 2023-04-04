@@ -8,7 +8,6 @@ class For_meAdmin(admin.ModelAdmin):
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ['name', 'avail']
-
 class ImagesInline(admin.StackedInline):
     model = Images
 @admin.register(Services)
@@ -23,11 +22,12 @@ class KeysAdmin(admin.ModelAdmin):
 @admin.register(Zaiavki)
 class ZaiavkiAdmin(admin.ModelAdmin):
     list_display = ['name','svaz','status','available']
+    list_filte = ['date']
 
 @admin.register(Nevs)
 class NevsAdmin(admin.ModelAdmin):
     list_display = ['name','available']
-
+    list_filte = ['date']
 
 
 

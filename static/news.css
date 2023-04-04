@@ -3,6 +3,13 @@ body{
     padding: 0;
     background-color: black;
     font-family: Montserrat;
+    opacity: 0;
+    animation: ani 2.5s forwards;
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .zagolovok {
