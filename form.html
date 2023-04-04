@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="forms.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form id="form" action="/add_form" style="display:none;width:550px;height: 700px;padding: 0;border-radius: 20px;background-color: black;" method="get">
+        <div class="img_head"></div>
+        <div id="conent">
+            <div class="name_servis"><p>Name of Service</p></div>
+            <div class="contaner">
+                <div class="name">
+                    <p>ФИО</p>
+                    <input id = "name" name = 'name'>
+                    </div>
+                <div class="svaz">
+                    <p>Email</p>
+                    <input id = "svaz" name = 'svaz' >
+                    </div>
+                <div class="opis">
+                        <p>Краткое описание заказа</p>
+                        <textarea  id = "opis" name="opis"></textarea>
+                        </div>
+            </div>
+
+            <a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>
+    </div>
+    </form>
+
+    
+      <button data-fancybox data-src="#form">Launch Dialog</button>
+<script>
+    Fancybox.show([{ src: "#form", type: "inline" }]);
+    Fancybox.show([{ src: "#form", type: "clone" }]);
+</script>
+
+<script>
+
+    const getData = async (url = '') => {
+    const response = await fetch(url, {
+    method: 'GET',
+    headers:{"Content-Type": "application/json"},
+         });
+
+         return response.json();
+        }
+    function add_zap() {
+
+        const Url = '/add_zap'
+
+        const name = document.getElementById('name').value
+        const svaz = document.getElementById('svaz').value
+        const opis = document.getElementById('opis').value
+
+
+        console.log(name)
+        console.log(svaz)
+        console.log(opis)
+
+    getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
+        console.log(data)
+        document.getElementById("conent").innerHTML = `<div class="name_servis" ><p>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p></div>`
+});
+
+}
+</script>
+</body>
+
+</html>

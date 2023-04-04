@@ -20,3 +20,14 @@ class KeysAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     inlines = [ImagesInline,]
 
+@admin.register(Zaiavki)
+class ZaiavkiAdmin(admin.ModelAdmin):
+    list_display = ['name','svaz','status','available']
+
+@admin.register(Nevs)
+class NevsAdmin(admin.ModelAdmin):
+    list_display = ['name','available']
+
+
+
+

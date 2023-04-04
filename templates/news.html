@@ -16,30 +16,20 @@
     <div class="zagolovok">
         <h1>Пресс центр</h1>
     </div>
+    {%for new in news%}
     <section class="news">
         <section class="novelty">
-        <div class="content_img_rigth">
-        <img src="{% static 'no_image.png' %}" alt="img" width="200">
+        <div class="content_{% cycle 'img_rigth' 'img_left' %}">
+        <img src="{{ new.logo.url }}" alt="img" width="200">
         <div class="diskriptions">
-          <h2 class="title">Заголовок</h2>
-          <p class="publish-date">04.04.2023</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime tempora ab ullam id ratione odio recusandae vel tenetur, nemo, eligendi mollitia vero placeat, officiis non! Error vel officiis omnis aut? ipsum dolor sit amet, consectetur adipisicing elit. Sunt, amet maiores, inventore optio quae sequi mollitia laudantium illum, dolore distinctio quo architecto earum impedit laborum, sit animi nisi quibusdam hic. ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, a eveniet, sint ipsam tempora at voluptates eaque velit! Distinctio velit maxime nostrum corporis aspernatur, voluptatem. Pariatur soluta ipsum, cum eius.</p>
+          <h2 class="title">{{ new.name }}</h2>
+          <p class="publish-date">{{ new.date }}</p>
+          <p>{{ new.description }}</p>
         </div>
         </div>
         </section>
       </section>
-    <section class="news">
-        <section class="novelty">
-        <div class="content_img_left">
-        <img src="{% static 'no_image.png' %}" alt="img" width="200">
-        <div class="diskriptions">
-          <h2 class="title">Заголовок</h2>
-          <p class="publish-date">04.04.2023</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime tempora ab ullam id ratione odio recusandae vel tenetur, nemo, eligendi mollitia vero placeat, officiis non! Error vel officiis omnis aut? ipsum dolor sit amet, consectetur adipisicing elit. Sunt, amet maiores, inventore optio quae sequi mollitia laudantium illum, dolore distinctio quo architecto earum impedit laborum, sit animi nisi quibusdam hic. ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, a eveniet, sint ipsam tempora at voluptates eaque velit! Distinctio velit maxime nostrum corporis aspernatur, voluptatem. Pariatur soluta ipsum, cum eius.</p>
-        </div>
-        </div>
-        </section>
-      </section>
-    </section>
+
+    {% endfor %}
 </body>
 </html>

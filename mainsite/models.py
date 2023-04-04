@@ -76,3 +76,35 @@ class Images (models.Model):
         verbose_name_plural = 'Дополнительные фото'
 
 
+class Zaiavki(models.Model):
+
+    name = models.CharField(max_length=200, db_index=True,verbose_name='Имя')
+    svaz = models.CharField(max_length=200,blank=True, verbose_name='Способ связи')
+    description = models.TextField(blank=True, verbose_name='Описание заказа')
+    status = models.TextField(blank=True, verbose_name='Стастус заявки')
+    available = models.BooleanField(default=True,verbose_name='Активость')
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'
+
+    def __str__(self):
+        return self.name
+
+class Nevs(models.Model):
+
+    name = models.CharField(max_length=200, db_index=True,verbose_name='Имя')
+    date = models.DateField(blank=True, verbose_name='Дата создания')
+    logo = models.ImageField(upload_to=f'image/Nevs/{randint(1, 10000)}', blank=True, verbose_name='Обложка')
+    description = models.TextField(blank=True, verbose_name='Тизер новости')
+    main_text = models.TextField(blank=True, verbose_name='Тело новости')
+    available = models.BooleanField(default=True,verbose_name='Активость')
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Новсть'
+        verbose_name_plural = 'Новости'
+
+    def __str__(self):
+        return self.name

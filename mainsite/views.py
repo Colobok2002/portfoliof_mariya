@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.http import JsonResponse
 # Create your views here.
 
 def index(request):
@@ -37,4 +38,25 @@ def aboyt_keus(request,slug):
 
 def nevs(request):
 
-    return render(request, "news.html")
+    arg = dict()
+    arg['news'] = Nevs.objects.filter(available= True)
+
+    return render(request, "news.html",arg)
+
+def add_zap(request):
+
+    try:
+        zai = Zaiavki()
+
+        zai.name = request.GET.get('name')
+        zai.svaz = request.GET.get('svaz')
+        zai.description = request.GET.get('opis')
+        zai.status = "Непрочитанно"
+        zai.available = True
+
+        zai.save()
+
+        return JsonResponse({"flag":True})
+    except:
+
+        return JsonResponse({"flag": False})
