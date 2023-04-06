@@ -21,13 +21,13 @@ class KeysAdmin(admin.ModelAdmin):
 
 @admin.register(Zaiavki)
 class ZaiavkiAdmin(admin.ModelAdmin):
-    list_display = ['name','svaz','status','available']
-    list_filte = ['date']
+    list_display = ['name','svaz','status','date','available']
+    list_filter  = ['date','available']
 
 @admin.register(Nevs)
 class NevsAdmin(admin.ModelAdmin):
     list_display = ['name','available']
-    list_filte = ['date']
+    list_filter  = ['date','available']
 
 
 

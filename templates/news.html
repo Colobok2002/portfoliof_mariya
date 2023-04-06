@@ -13,13 +13,13 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 <body>
-    <div class="zagolovok">
-        <h1>Пресс центр</h1>
+    <div style="margin-top:40px" class="zagolovok">
+        <h1>Пресс-центр</h1>
     </div>
     {%for new in news%}
     <section class="news">
         <section class="novelty">
-        <div class="content_{% cycle 'img_rigth' 'img_left' %}">
+        <div class="content_img_rigth">
         <img src="{{ new.logo.url }}" alt="img" width="200">
         <div class="diskriptions">
           <h2 class="title">{{ new.name }}</h2>
