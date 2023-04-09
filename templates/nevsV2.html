@@ -17,7 +17,7 @@
 
 
 </head>
-    <body>
+    <body id ="bod">
         <div class="row">
             <nav class="nav" role="navigation">
               <ul class="nav__items">
@@ -46,7 +46,7 @@
             <p>News</p>
         </div>
         
-        <button onclick="topFunction()" id="myBtn"><img src="./static/images/arrow-up.svg"></button> 
+        <button onclick="topFunction()" id="myBtn"><img src="{% static '/images/arrow-up.svg' %} "></button>
         <div class="content">
         
         {% for new in news %}
@@ -110,6 +110,13 @@
                 $('html, body').animate({scrollTop: 0},500);
                 };
 
+    </script>
+    <script>
+        $(document).ready(function(){
+            console.log(123);
+            document.getElementById("bod").style.opacity = "1";
+
+            });
     </script>
     </body>
 </html>

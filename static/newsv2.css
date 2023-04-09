@@ -3,8 +3,8 @@ body{
     padding: 0;
     background-color: black;
     font-family: Montserrat;
-    opacity: 0;
-    animation: ani 2.5s forwards;
+    opacity:0;
+    transition: 4s ease;
     text-decoration: none;
 }
 
@@ -118,12 +118,6 @@ a {
 a:hover{
     color: #4ec03b;
   }
-
-
-@keyframes ani {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
 
 .img_slider{
     display: none;

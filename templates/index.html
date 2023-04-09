@@ -72,7 +72,7 @@
       </div>
     </div>
   </header>
-
+  <button onclick="topFunction()" id="myBtn"><img src="{% static '/images/arrow-up.svg' %} "></button>
   <main role="main">
     {% if keys %}
     <!-- ***** Work ***** -->
@@ -210,9 +210,6 @@
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="{% static 'images/arrow-up.svg' %}" alt="Back to Top" class="back-to-top__image"/>
-  </a>
   <script src="{% static 'index.js' %}"></script>
   <script src="{% static 'animation.js' %}"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -289,6 +286,22 @@ function create_form() {
 
 }
 </script>
+<script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.opacity= 1;
+            } else {
+                document.getElementById("myBtn").style.opacity= 0;
+            }
+        }
+        var t;
+        function topFunction() {
+                $('html, body').animate({scrollTop: 0},500);
+                };
+
+    </script>
 </body>
 
 </html>
