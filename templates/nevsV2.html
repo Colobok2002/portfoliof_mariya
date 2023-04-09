@@ -65,7 +65,7 @@
             <div class="diskriptions">
               <h2 class="title">{{ new.name }}</h2>
               <p class="publish-date">{{ new.date }}</p>
-              <p class="news_tizer">{{ new.main_text }}</p>
+              <p class="news_tizer">{{ new.main_text | safe }}</p>
             </div>
             </div>
             </section>

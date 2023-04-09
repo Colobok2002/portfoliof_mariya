@@ -87,7 +87,7 @@
             <div class="work__text">
               <h3>{{key.name}}</h3>
               <p>
-                {{key.description}}
+                {{key.description | safe}}
               </p>
               <ul class="work__list">
                 {% for name_services in key.services.all %}
@@ -140,7 +140,7 @@
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
-              {{ fm.text }}
+              {{ fm.text | safe }}
             </p>
             <!-- Provide a link to your resume -->
           </div>
