@@ -16,6 +16,9 @@ body{
     color: white;
     text-align: center;
 }
+.news_tizer{
+    text-align: left;
+}
 
 .news{
     display: flex;

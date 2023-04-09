@@ -8,16 +8,24 @@ class For_meAdmin(admin.ModelAdmin):
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ['name', 'avail']
-class ImagesInline(admin.StackedInline):
-    model = Images
+
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     list_display = ['name']
+
+
+class ImageskeysInline(admin.StackedInline):
+    model = Images_keys
+
+class ImagesnevsInline(admin.StackedInline):
+    model = Images_nevs
+
+
 @admin.register(Keys)
 class KeysAdmin(admin.ModelAdmin):
     list_display = ['name','available']
     prepopulated_fields = {'slug': ('name',)}
-    inlines = [ImagesInline,]
+    inlines = [ImageskeysInline,]
 
 @admin.register(Zaiavki)
 class ZaiavkiAdmin(admin.ModelAdmin):
@@ -28,6 +36,7 @@ class ZaiavkiAdmin(admin.ModelAdmin):
 class NevsAdmin(admin.ModelAdmin):
     list_display = ['name','available']
     list_filter  = ['date','available']
+    inlines = [ImagesnevsInline, ]
 
 
 

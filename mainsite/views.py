@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from .models import *
 from django.http import JsonResponse
 # Create your views here.
@@ -40,8 +40,8 @@ def nevs(request):
 
     arg = dict()
     arg['news'] = Nevs.objects.filter(available= True)
-
-    return render(request, "news.html",arg)
+    arg['mo_photo'] = Images_nevs.objects.all()
+    return render(request, "nevsV2.html",arg)
 
 def add_zap(request):
 

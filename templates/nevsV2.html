@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static '/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/slick/slick-theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'newsv2.css' %}"/>
+
+
+</head>
+    <body>
+        <div class="row">
+            <nav class="nav" role="navigation">
+              <ul class="nav__items">
+                
+                <li class="nav__item"><a href="/#work" class="nav__link">Работы</a></li>
+                
+                
+                <li class="nav__item"><a href="/#clients" class="nav__link">Клиенты</a></li>
+                
+                
+                <li class="nav__item">
+                  <a href="/#about" class="nav__link">О себе</a>
+                </li>
+                
+                <li class="nav__item">
+                  <a href="/#contact" class="nav__link">Контакты</a>
+                </li>
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Назад</a>
+                </li>
+      
+              </ul>
+            </nav>
+          </div>
+        <div style="margin-top:40px" class="zagolovok">
+            <p>News</p>
+        </div>
+        
+        <button onclick="topFunction()" id="myBtn"><img src="./static/images/arrow-up.svg"></button> 
+        <div class="content">
+        
+        {% for new in news %}
+        <section class="news">
+            <section class="novelty">
+            <div class="content_news">
+                <div class="slider">
+                    <div class = 'slider_img'><img class = "img_slider" src="{{ new.logo.url }}" alt="img" ></div>
+                    {% for photo in mo_photo %}
+                        {% if photo.product_id == new.id %}
+                        <div class = 'slider_img'><img class = "img_slider" src="{{ photo.image.url }}" alt="img" ></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+            <div class="diskriptions">
+              <h2 class="title">{{ new.name }}</h2>
+              <p class="publish-date">{{ new.date }}</p>
+              <p class="news_tizer">{{ new.main_text }}</p>
+            </div>
+            </div>
+            </section>
+        </section>
+        {% endfor %}
+    </div>
+    <footer>
+        <p style="text-align: center;color: whitesmoke;">
+            &copy; 2023 -  Developed by <a href="https://t.me/Ilyshaa20" class="link">Barinof</a>.
+          </p>
+    </footer>
+        
+    
+   
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static '/slick/slick.min.js' %}"></script>
+    
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,
+                arrows: false           
+            }
+            );
+            });
+    </script>
+
+    <script> 
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.opacity= 1;
+            } else {
+                document.getElementById("myBtn").style.opacity= 0;
+            }
+        }
+        var t;
+        function topFunction() {
+                $('html, body').animate({scrollTop: 0},500);
+                };
+
+    </script>
+    </body>
+</html>

@@ -68,14 +68,15 @@ class Keys(models.Model):
     def __str__(self):
         return self.name
 
-class Images (models.Model):
+class Images_keys (models.Model):
 
     product = models.ForeignKey(Keys, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to=f'image/Keys/{randint(1,10000)}', blank=True,verbose_name='Фото')
 
     class Meta:
-        verbose_name = 'Дополнительное фото'
-        verbose_name_plural = 'Дополнительные фото'
+        verbose_name = 'Дополнительное фото кейсов'
+        verbose_name_plural = 'Дополнительные фото кейса'
+
 
 
 class Zaiavki(models.Model):
@@ -95,13 +96,14 @@ class Zaiavki(models.Model):
     def __str__(self):
         return self.name
 
+
+
 class Nevs(models.Model):
 
     name = models.CharField(max_length=200, db_index=True,verbose_name='Имя')
     date = models.DateField(blank=True, verbose_name='Дата создания',default=django.utils.timezone.now)
     logo = models.ImageField(upload_to=f'image/Nevs/{randint(1, 10000)}', blank=True, verbose_name='Обложка')
-    description = models.TextField(blank=True, verbose_name='Тизер новости')
-    main_text = models.TextField(blank=True, verbose_name='Тело новости')
+    main_text = models.TextField(blank=True, verbose_name='Текст новости')
     available = models.BooleanField(default=True,verbose_name='Активость')
 
     class Meta:
@@ -111,3 +113,14 @@ class Nevs(models.Model):
 
     def __str__(self):
         return self.name
+
+class Images_nevs (models.Model):
+
+    product = models.ForeignKey(Nevs, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to=f'image/Keys/{randint(1,10000)}', blank=True,verbose_name='Фото')
+
+    class Meta:
+
+        verbose_name = 'Дополнительное фото новостей '
+        verbose_name_plural = 'Дополнительные фото новости'
+
