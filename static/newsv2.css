@@ -155,8 +155,24 @@ a:hover{
 .news_tizer{
     text-align: left;
     height: 250px;
-    overflow: scroll;
+    overflow: auto;
+    padding-right: 10px;
+
 }
+
+.news_tizer::-webkit-scrollbar {
+  width: 14px;
+}
+
+.news_tizer::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4ec03b;
+}
+
+.news_tizer::-webkit-scrollbar-track {
+  background-color: black;
+}
+
 .news-cont {
     color:white;
     display: flex;

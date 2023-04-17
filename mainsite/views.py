@@ -33,8 +33,7 @@ def index(request):
 
 def aboyt_keus(request,slug):
 
-    print(Keys.objects.filter(slug= slug)[0])
-    return render(request, "index.html")
+    return render(request, "keys_podrob.html" , {'keys':Keys.objects.filter(slug= slug)[0] , 'mor_img':Images_keys.objects.filter(product_id = Keys.objects.filter(slug= slug)[0].id)})
 
 def nevs(request):
 

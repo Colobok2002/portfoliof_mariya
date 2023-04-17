@@ -151,7 +151,7 @@ section {
 
     transform: translate(0, 0);
     opacity: 1;
-    transition: all 3s;
+    transition: all 2s;
 }
 
 .my_work {
@@ -159,7 +159,7 @@ section {
     margin-top: 70px;
     transform: scale(0.5);
     opacity: 0;
-    transition: all 3s;
+    transition: all 2s;
 
 }
 
@@ -178,15 +178,6 @@ section {
 
 }
 
-@media(max-width: 900px) {
-    .work_left {
-    padding: var(--gutter-huge) 0;
-    transform: translate(-200px, 0px );
-    opacity: 0;
-    transition: all 3s;
-
-    }
-}
 
 .work_rite {
     padding: var(--gutter-huge) 0;
@@ -204,23 +195,53 @@ section {
     transition: all 3s;
 
     }
+    .work_left {
+    padding: var(--gutter-huge) 0;
+    transform: translate(-200px, 0px );
+    opacity: 0;
+    transition: all 3s;
+
+    }
 }
+
+
+@media(max-width: 400px) {
+    .work_rite {
+    padding: var(--gutter-huge) 0;
+    transform: translate(100px, 0px );
+    opacity: 0;
+    transition: all 3s;
+
+    }
+    .work_left {
+    padding: var(--gutter-huge) 0;
+    transform: translate(-100px, 0px );
+    opacity: 0;
+    transition: all 3s;
+
+    }
+}
+
+@media(max-width: 600px) {
+
+
+}
+
 .work_left.element-show{
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 3s;
+    transition: all 2s;
 }
 
 .work_rite.element-show{
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 3s;
+    transition: all 2s;
 }
 
 
 
 img {
-    object-fit: contain;
     max-width: 100%;
     display: block;
     margin-left: auto;
@@ -298,6 +319,7 @@ a {
     font-family: 'Jost', sans-serif;
     transition: all .2s;
     outline: 2px solid transparent;
+    text-decoration: none;
 }
 
 ::-moz-focus-inner {
@@ -700,8 +722,7 @@ body:not(.user-is-tabbing) a:focus {
     transform: translate(0px, 0px);
     opacity: 1;
     transition: opacity,transform 1.5s;
-    height: 400px;
-    width:1000px;
+    height: auto;
 }
 .about__content.element-show .about__text{
 
@@ -709,13 +730,28 @@ body:not(.user-is-tabbing) a:focus {
     transition: all 1.5s;
     font-size: 20px;
     height: 400px;
-    overflow: scroll;
+    overflow: auto;
+    padding-right: 10px;
     text-align:left;
+    width: 100%;
+}
+
+.about__content.element-show .about__text::-webkit-scrollbar {
+  width: 14px;
+}
+
+.about__content.element-show .about__text::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4ec03b;
+}
+
+.about__content.element-show .about__text::-webkit-scrollbar-track {
+  background-color: black;
 }
 
 @media(min-width: 901px) {
     .about__text {
-        flex: 0 0 35%;
+        flex: 0 0 50%;
     }
 
     .about__photo-container {

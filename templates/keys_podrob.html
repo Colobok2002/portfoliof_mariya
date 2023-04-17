@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'keys_podrob.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'forms.css' %}"/>
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="{% static 'jquery.fancybox.min.css' %}">
+
+</head>
+<body id="bod">
+  <form id="form" action="/add_form"  method="get">
+    <div class="img_head">
+      <img src="{% static 'unsplash_KLnyXKDpcKo.png' %}" alt="">
+    </div>
+    <div id="conent">
+
+</div>
+
+</form>
+
+  <div class="container">
+  <div class="lofo" id = 'lofo1'>
+  </div>
+  <div class="content"> 
+  <div class="name_servis">
+    {{keys.name}}
+  </div>
+  </div>
+  <div class="slider">    
+          
+    <div><img src="{{keys.logo.url}}"></div>
+      {% for img in mor_img %}
+
+    <div><img src="{{img.image.url}}"></div>
+      {% endfor %}
+
+  </div>
+
+
+<div class="content">  
+  <div class="deskriptons">
+    <div class="head">
+      Описание
+    </div>
+    <div class="text">
+        {{keys.text}}
+     </div>
+  </div>  
+  <div class="zakaza">
+  <button data-fancybox href="#form" onclick="create_form()" >Заказать</button>  
+</div> 
+</div>    
+    </div>
+<footer role="contentinfo" class="footer">
+    <div class="row">
+      <p>
+        © 2023 -  Developed by <a href="https://t.me/Ilyshaa20" class="link">Barinof</a>.
+      </p>
+    </div>
+  </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="static/slick/slick.min.js"></script>
+    <script>
+
+    $('.slider').slick({
+    infinite: true ,
+    centerMode: true,
+    arrows: false ,
+    slidesToShow:3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 15000,
+    focusOnSelect: true,
+    variableWidth: true,
+    dots: true,
+    responsive: [
+    {
+      breakpoint: 670,
+      settings: {
+        slidesToShow:1,
+      }
+    },
+  ]
+  });
+
+    </script>
+
+<script>
+function create_form() {
+  document.getElementById("conent").innerHTML = `<div class="name_servis_form"><p>{{keys.name}}</p></div><div class="contaner"><div class="name"><p>ФИО</p><input id = "name" name = 'name'></div><div class="svaz"><p>Email</p><input id = "svaz" name = 'svaz' ></div><div class="opis"><p>Краткое описание заказа</p><textarea  id = "opis" name="opis"></textarea></div></div><a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>`
+}
+</script>
+
+<script>
+
+  const getData = async (url = '') => {
+  const response = await fetch(url, {
+  method: 'GET',
+  headers:{"Content-Type": "application/json"},
+       });
+
+       return response.json();
+      }
+
+  function add_zap() {
+
+      const Url = '/add_zap'
+
+      const name = document.getElementById('name').value
+      const svaz = document.getElementById('svaz').value
+      const opis = document.getElementById('opis').value
+
+
+      console.log(name)
+      console.log(svaz)
+      console.log(opis)
+
+  getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
+      document.getElementById("conent").innerHTML = `<div class="name_servis" ><p id='message_suk'>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p></div>`
+});
+
+}
+</script>
+<script>
+  window.addEventListener('resize', res);
+  function res() {
+    if (window.innerWidth<600){
+      document.getElementsByClassName('lofo')[0].style.width =  `${window.innerWidth+200}px`;
+    } else if (window.innerWidth > 1920) {
+      document.getElementsByClassName('lofo')[0].style.width =  `1920px`;
+      document.getElementsByClassName('lofo')[0].style.marginLeft =  `${window.innerWidth/2-960}px`;
+
+    } else {
+      document.getElementsByClassName('lofo')[0].style.width =  `${window.innerWidth}px`;
+    }
+  }
+  res();
+   
+</script>
+<script>
+        $(document).ready(function(){
+
+            document.getElementById("bod").style.opacity = "1";
+
+            });
+    </script>
+</body>
+</html>

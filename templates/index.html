@@ -9,6 +9,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="{% static '/images/favicon.png' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
   <!-- Put your site title here -->
   <title>
@@ -31,7 +32,9 @@
 
 <body>
    <form id="form" action="/add_form" style="display:none;width:550px;height: 700px;padding: 0;border-radius: 20px;background-color: black;box-shadow: 4px -4px 16px rgba(224, 224, 224, 0.25), 0px 4px 4px rgba(224, 224, 224, 0.25);" method="get">
-        <div class="img_head"></div>
+        <div class="img_head">
+          <img src="{% static 'unsplash_KLnyXKDpcKo.png' %}" alt="">
+        </div>
         <div id="conent">
 
     </div>
@@ -248,12 +251,8 @@
 </script>
 
 <script>
-    Fancybox.show([{ src: "#form", type: "inline" }]);
-    Fancybox.show([{ src: "#form", type: "clone" }]);
-</script>
-<script>
 function create_form() {
-  document.getElementById("conent").innerHTML = `<div class="name_servis"><p>Форма связи</p></div><div class="contaner"><div class="name"><p>ФИО</p><input id = "name" name = 'name'></div><div class="svaz"><p>Email</p><input id = "svaz" name = 'svaz' ></div><div class="opis"><p>Краткое описание заказа</p><textarea  id = "opis" name="opis"></textarea></div></div><a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>`
+  document.getElementById("conent").innerHTML = `<div class="name_servis_form"><p>QWE</p></div><div class="contaner"><div class="name"><p>ФИО</p><input id = "name" name = 'name' required></div><div class="svaz"><p>Email</p><input id = "svaz" name = 'svaz' required></div><div class="opis"><p>Краткое описание заказа</p><textarea  id = "opis" name="opis"></textarea></div></div><a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>`
 }
 </script>
 <script>
@@ -281,7 +280,7 @@ function create_form() {
         console.log(opis)
 
     getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
-        document.getElementById("conent").innerHTML = `<div class="name_servis" ><p>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p></div>`
+        document.getElementById("conent").innerHTML = `<p id='message_suk'>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p>`
 });
 
 }
