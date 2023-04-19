@@ -19,26 +19,32 @@
   <meta name="description" content="Add small description of yourslef.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="{% static '/index.css' %}" />
+  <link rel="stylesheet" href="{% static 'index.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'forms.css' %}"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static '/forms.css' %}"/>
+  <link rel="stylesheet" href="{% static 'jquery.fancybox.min.css' %}">
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
 </head>
 
 <body>
-   <form id="form" action="/add_form" style="display:none;width:550px;height: 700px;padding: 0;border-radius: 20px;background-color: black;box-shadow: 4px -4px 16px rgba(224, 224, 224, 0.25), 0px 4px 4px rgba(224, 224, 224, 0.25);" method="get">
-        <div class="img_head">
-          <img src="{% static 'unsplash_KLnyXKDpcKo.png' %}" alt="">
-        </div>
-        <div id="conent">
-
+    <form id="form" action="/add_form"  method="get">
+    <div class="img_head">
+      <img src="{% static 'unsplash_KLnyXKDpcKo.png' %}" alt="">
     </div>
-    </form>
+    <div id="conent">
+
+</div>
+
+</form>
   <!-- ***** Header ***** -->
 
   <header class="header" role="banner" id="top">
@@ -213,8 +219,8 @@
     </div>
   </footer>
 
-  <script src="{% static 'index.js' %}"></script>
   <script src="{% static 'animation.js' %}"></script>
+
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
