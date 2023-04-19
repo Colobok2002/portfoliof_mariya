@@ -45,7 +45,7 @@
     --container-small-width: 500px;
 
     --gutter-huge: 6rem;
-    --gutter-medium: 6rem;
+    --gutter-medium: 4rem;
     --gutter-normal: 3rem;
     --gutter-small-1: 2.5rem;
     --gutter-small: 2rem;
@@ -481,6 +481,12 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 500px) {
     .nav {
         justify-content: center;
+    }
+}
+
+@media(max-width: 400px) {
+    a {
+        font-size:11px;
     }
 }
 
