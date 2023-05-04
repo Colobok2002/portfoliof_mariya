@@ -72,7 +72,7 @@ html {
 .work__image-box img{
     border-radius: 50px;
     width: 100%;
-    border: 4px solid;
+    border: 4px solid whitesmoke;
 
 }s
 
@@ -289,7 +289,7 @@ h2::after {
 }
 
 h3 {
-    font-size: var(--font-size-medium-1);
+    font-size: 32px;
     margin-bottom: var(--gutter-small);
 }
 
@@ -389,36 +389,19 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link__text {
-    position: relative;
-    display: inline-block;
-    padding: .6rem;
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--pink);
+
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    padding: 8px;
+    transition: all 0.5s;
 }
 
-.link__text::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 100%;
-    background: var(--white);
-    height: 100%;
-    z-index: -1;
-    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+.link__text:hover {
+    border: 2px solid #4ec03b;
+    transition: all 0.5s;
+
 }
 
-.link__text:focus {
-    outline: none;
-}
-
-.link__text:hover::after,
-.link__text:focus:after {
-    right: 0;
-    background: var(--pink);
-}
 
 .link__text span {
     padding-left: 1rem;
@@ -486,7 +469,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 400px) {
     a {
-        font-size:11px;
+        font-size:20px;
     }
 }
 
@@ -545,6 +528,7 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
+    min-height: 800px;
 }
 
 
@@ -742,16 +726,16 @@ body:not(.user-is-tabbing) a:focus {
     width: 100%;
 }
 
-.about__content.element-show .about__text::-webkit-scrollbar {
-  width: 14px;
+*::-webkit-scrollbar {
+  width: 5px;
 }
 
-.about__content.element-show .about__text::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #4ec03b;
+  background:#1c1b22;
 }
 
-.about__content.element-show .about__text::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background-color: black;
 }
 
@@ -829,6 +813,15 @@ div.work__text h3{
     }
 }
 
+@media(max-width: 400px) {
+
+    .work__text{
+        font-size: 20px;
+
+    }
+}
+
+
 #myBtn {
     opacity: 0;/* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -855,4 +848,51 @@ div.work__text h3{
     right: 34px;
     z-index: 99;
 
+}
+
+
+
+
+.prise {
+    display: flex;
+}
+
+.prise__new {
+    color:#4ec03b;
+}
+
+
+.work__klass_desc {
+  max-height: 400px;
+  overflow: auto;
+}
+
+
+
+.work__image:hover {
+  opacity: 0.8;
+  transition: 0.3s linear ;
+}
+
+
+.work__image {
+  transition: 0.3s linear;
+}
+
+
+@media(max-width: 680px) {
+    li.nav__item:nth-child(2) {
+
+        margin-right:0px;
+        display:none;
+
+
+    }
+}
+
+@media(max-width: 370px) {
+    .row {
+        padding: 0 0;
+        margin: 0 auto;
+    }
 }

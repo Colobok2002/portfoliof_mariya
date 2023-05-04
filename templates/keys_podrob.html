@@ -59,7 +59,7 @@
       Описание
     </div>
     <div class="text">
-        {{keys.text}}
+        {{keys.text | safe}}
      </div>
   </div>  
   <div class="zakaza">
@@ -105,7 +105,7 @@
 
 <script>
 function create_form() {
-  document.getElementById("conent").innerHTML = `<div class="name_servis_form"><p>{{keys.name}}</p></div><div class="contaner"><div class="name"><p>ФИО</p><input id = "name" name = 'name'></div><div class="svaz"><p>Email</p><input id = "svaz" name = 'svaz' ></div><div class="opis"><p>Краткое описание заказа</p><textarea  id = "opis" name="opis"></textarea></div></div><a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>`
+  document.getElementById("conent").innerHTML = `<div class="name_servis_form"><p>{{keys.name}}</p></div><div class="contaner"><div class="name"><p>ФИО</p><input id = "name" name = 'name'></div><div class="svaz"><p>Телефон</p><input id = "svaz" name = 'svaz' ></div><div class="opis"><p>Краткое описание заказа</p><textarea  id = "opis" name="opis"></textarea></div></div><a class="zak" type="submit" style = 'text-decoration: none;' onclick="add_zap()"><div class="qwe"><p>Заказать</p></div></a>`
 }
 </script>
 

@@ -125,7 +125,7 @@ p{
 }
 
 #form {
-    display: none; max-width: 550px; max-height: 700px; padding: 0px; border-radius: 20px; background-color: black; box-shadow: rgba(224, 224, 224, 0.25) 4px -4px 16px, rgba(224, 224, 224, 0.25) 0px 4px 4px;
+    min-height: 600px;display: none; max-width: 550px; max-height: 700px; padding: 0px; border-radius: 20px; background-color: black; box-shadow: rgba(224, 224, 224, 0.25) 4px -4px 16px, rgba(224, 224, 224, 0.25) 0px 4px 4px;
 }
 
 @media(max-width: 574px) {

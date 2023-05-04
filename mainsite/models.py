@@ -54,6 +54,8 @@ class Keys(models.Model):
     name = models.CharField(max_length=200, db_index=True,verbose_name='Название кейса')
     slug = models.SlugField(max_length=200, db_index=True,verbose_name='Уникальный url (Генерируется сам)')
     logo = models.ImageField(upload_to=f'image/Keys/{randint(1,10000)}', blank=True,verbose_name='Обложка')
+    price = models.IntegerField(verbose_name='Цена', blank=False, default=1)
+    price_for_sale = models.IntegerField(verbose_name='Цена со скидкой',blank=True , null=True)
     description = models.TextField(blank=True,verbose_name='Краткое описание')
     text = models.TextField(blank=True, verbose_name='Полное описание')
     services = models.ManyToManyField(Services, verbose_name='Услуги')
