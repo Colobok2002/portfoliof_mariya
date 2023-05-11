@@ -269,10 +269,6 @@ function create_form() {
         const opis = document.getElementById('opis').value
 
 
-        console.log(name)
-        console.log(svaz)
-        console.log(opis)
-
     getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
         document.getElementById("conent").innerHTML = `<p id='message_suk'>Спасибо за заявку<br>Я свяжусь с Вами в ближайшее время</p>`
 });

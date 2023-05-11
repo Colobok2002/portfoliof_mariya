@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="shortcut icon" type="image/png" href="{% static '/images/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'keys_podrob.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
@@ -129,10 +129,6 @@ function create_form() {
       const svaz = document.getElementById('svaz').value
       const opis = document.getElementById('opis').value
 
-
-      console.log(name)
-      console.log(svaz)
-      console.log(opis)
 
   getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
       document.getElementById("conent").innerHTML = `<div class="name_servis" ><p id='message_suk'>Спасибо за заявку<br>Я свяжусь с Вами в ближайшее время</p></div>`
