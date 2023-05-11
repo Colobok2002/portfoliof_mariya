@@ -126,3 +126,17 @@ class Images_nevs (models.Model):
         verbose_name = 'Дополнительное фото новостей '
         verbose_name_plural = 'Дополнительные фото новости'
 
+class Contakts(models.Model):
+
+    name = models.CharField(max_length=200,blank=True, verbose_name='Название')
+    url = models.CharField(max_length=500,blank=True, verbose_name='Ссылка')
+    available = models.BooleanField(default=True, verbose_name='Активость')
+
+    class Meta:
+
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
+
+    def __str__(self):
+        return self.name
+

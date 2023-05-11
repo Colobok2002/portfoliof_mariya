@@ -213,13 +213,6 @@ a:hover{
 @media(max-width: 500px) {
 
     .content_news {
-        width: 350px;
-    }
-}
-
-@media(max-width: 400px) {
-
-    .content_news {
         width: 300px;
     }
     .slider_img{

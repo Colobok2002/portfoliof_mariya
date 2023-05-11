@@ -180,6 +180,21 @@
       </div>
     </section>
     {% endif %}
+    {% if contakts %}
+    <section class="contacts" id="contacts">
+      <div class="row">
+        <h2>Контакты</h2>
+
+        {% for contakt in contakts %}
+        <div>
+          <p>{{contakt.name}}
+          <a href="{{contakt.url}}">{{contakt.url}}</a></p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </section>
+  {% endif %}
   </main>
 
   <!-- ***** Footer ***** -->
@@ -259,7 +274,7 @@ function create_form() {
         console.log(opis)
 
     getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
-        document.getElementById("conent").innerHTML = `<p id='message_suk'>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p>`
+        document.getElementById("conent").innerHTML = `<p id='message_suk'>Спасибо за заявку<br>Я свяжусь с Вами в ближайшее время</p>`
 });
 
 }

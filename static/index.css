@@ -597,10 +597,28 @@ body:not(.user-is-tabbing) a:focus {
         align-items: initial;
         flex-direction: column-reverse;
     }
-    main {
-        padding: 0 200px;
+    .my_work element-show , #work ,#about ,#contacts  {
+        padding: 70px 200px;
     }
+
 }
+
+@media(max-width: 800px) {
+
+    .my_work element-show , #work ,#about ,#contacts  {
+        padding: 100px 50px;
+    }
+
+}
+
+@media(max-width: 450px) {
+
+    .my_work element-show , #work ,#about ,#contacts  {
+        padding: 100px 10px;
+    }
+
+}
+
 
 .work__box:not(:last-child) {
     margin-bottom: 25rem;
@@ -923,3 +941,6 @@ div.work__text h3{
     }
 }
 
+.contacts p{
+    font-size: 30px;
+}

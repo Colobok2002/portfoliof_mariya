@@ -39,4 +39,10 @@ class NevsAdmin(admin.ModelAdmin):
     inlines = [ImagesnevsInline, ]
 
 
+@admin.register(Contakts)
+class ContaktsAdmin(admin.ModelAdmin):
+    None
+
+
+
 

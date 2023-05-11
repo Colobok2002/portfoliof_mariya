@@ -96,6 +96,7 @@
       breakpoint: 670,
       settings: {
         slidesToShow:1,
+
       }
     },
   ]
@@ -134,7 +135,7 @@ function create_form() {
       console.log(opis)
 
   getData(`${Url}?name=${name}&svaz=${svaz}&opis=${opis}`).then((data) => {
-      document.getElementById("conent").innerHTML = `<div class="name_servis" ><p id='message_suk'>Спасибо за заявку<br>Я свяжусь с вами в ближайшее время</p></div>`
+      document.getElementById("conent").innerHTML = `<div class="name_servis" ><p id='message_suk'>Спасибо за заявку<br>Я свяжусь с Вами в ближайшее время</p></div>`
 });
 
 }

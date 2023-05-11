@@ -28,6 +28,7 @@ def index(request):
     args['fm'] = fm
     args['pts'] = parthers
     args['keys'] = keys
+    args['contakts'] = Contakts.objects.filter(available= True)
 
     return render(request, "index.html",args)
 
