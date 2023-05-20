@@ -150,7 +150,9 @@
           <!-- Add logos of the clients or companies you'have worked with. -->
 
           {% for pt in pts %}
-          <div><img src="{{ pt.photo.url }}" class="client__logo" alt="{{pt.name }}" /></div>
+          <a data-fancybox href="#{{pt.name }}">
+          <div class="popap_sert" id ={{pt.name }} ><img src="{{ pt.photo.url }}" class="client__logo" alt="{{pt.name }}" /></div>
+          </a>
           {% endfor %}
         </div>
       </div>

@@ -758,7 +758,7 @@ body:not(.user-is-tabbing) a:focus {
 .about__content.element-show .about__text{
 
     opacity: 1;
-    transition: all 1.5s;
+    transition: opacity 1.5s;
     font-size: 20px;
     height: 400px;
     overflow: auto;
@@ -944,3 +944,30 @@ div.work__text h3{
 .contacts p{
     font-size: 30px;
 }
+
+
+/* 
+.fancybox-content{
+    height: 1000px !important;
+    width: 1000px !important;
+} */
+
+
+.popap_sert.fancybox-content{
+    border-radius:20px ;
+}
+
+@media(max-width: 680px) {
+.popap_sert.fancybox-content img{
+    width: 300px;
+    height: 400px;
+}
+}
+
+@media(max-width: 400px) {
+    .popap_sert.fancybox-content img{
+        width: 200px;
+        height: 300px;
+    }
+    }
+
