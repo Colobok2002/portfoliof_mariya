@@ -6,6 +6,7 @@ import django
 
 
 class For_me(models.Model):
+    """Модуль профиля раздала обо мне"""
 
     name = models.CharField(max_length=200, db_index=True,verbose_name='Название')
     photo = models.ImageField(upload_to=f'image/For_me/{randint(1,100)}', blank=True, verbose_name='Обложка')

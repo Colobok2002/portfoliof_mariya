@@ -5,45 +5,78 @@ from django.http import JsonResponse
 
 def index(request):
 
-    args = dict()
+    """ Функция главной страницы
 
-    fm = For_me.objects.filter(avail= True)
+    :param request: request
+    :return -> dict  
+    """
 
-    if len(fm) == 0 :
-        fm = False
-    else:
-        fm = fm[0]
-    args['fm'] = fm
+    try:
+        args = dict()
 
-    parthers = Partners.objects.filter(avail= True)
+        fm = For_me.objects.filter(avail= True)
 
-    if len(parthers) == 0 :
-        parthers = False
+        if len(fm) == 0 :
+            fm = False
+        else:
+            fm = fm[0]
+        args['fm'] = fm
 
-    keys = Keys.objects.filter(available= True)
+        parthers = Partners.objects.filter(avail= True)
 
-    if len(keys) == 0 :
-        keys = False
+        if len(parthers) == 0 :
+            parthers = False
 
-    args['fm'] = fm
-    args['pts'] = parthers
-    args['keys'] = keys
-    args['contakts'] = Contakts.objects.filter(available= True)
+        keys = Keys.objects.filter(available= True)
 
-    return render(request, "index.html",args)
+        if len(keys) == 0 :
+            keys = False
+
+        args['fm'] = fm
+        args['pts'] = parthers
+        args['keys'] = keys
+        args['contakts'] = Contakts.objects.filter(available= True)
+
+        return render(request, "index.html",args)
+    except:
+        return redirect("/")
 
 def aboyt_keus(request,slug):
 
-    return render(request, "keys_podrob.html" , {'keys':Keys.objects.filter(slug= slug)[0] , 'mor_img':Images_keys.objects.filter(product_id = Keys.objects.filter(slug= slug)[0].id)})
+    """ Функция подробной страницы кейсво
 
+    :param request: request
+    :return -> dict  
+    """
+
+    try:
+        return render(request, "keys_podrob.html" , {'keys':Keys.objects.filter(slug= slug)[0] , 'mor_img':Images_keys.objects.filter(product_id = Keys.objects.filter(slug= slug)[0].id)})
+    except:
+        return redirect("/")
+    
 def nevs(request):
 
-    arg = dict()
-    arg['news'] = Nevs.objects.filter(available= True)
-    arg['mo_photo'] = Images_nevs.objects.all()
-    return render(request, "nevsV2.html",arg)
+    """ Функция новостей
+
+    :param request: request
+    :return -> dict  
+    """
+
+    try:
+        arg = dict()
+        arg['news'] = Nevs.objects.filter(available= True)
+        arg['mo_photo'] = Images_nevs.objects.all()
+        return render(request, "nevsV2.html",arg)
+    except:
+        return redirect("/")
 
 def add_zap(request):
+
+    """ Функция записи данных с формы
+
+    :param request: request
+    :return -> True/False  
+    """
 
     try:
         zai = Zaiavki()
@@ -60,3 +93,9 @@ def add_zap(request):
     except:
 
         return JsonResponse({"flag": False})
+    
+def referect_to_nome(request,exception):
+
+    """Функциональная функция, которая возврашает с кодом 404 на главную страницу"""
+
+    return redirect("/")

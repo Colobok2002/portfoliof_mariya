@@ -1,0 +1,242 @@
+
+body {
+    background: black;
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+.lofo{
+  background: url(unsplash_KLnyXKDpcKo.png) ;
+
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  height: 950px;
+  position: relative;
+  position: absolute;
+
+  
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background:#1c1b22;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+.container{
+    margin: 0px auto;
+
+  }
+
+
+.slick-slide
+  {
+    padding-bottom: 40px;
+    margin-left: 17px;
+    margin-top: 200px;
+  }
+
+
+.slick-slide img{
+    opacity: 0;
+    filter: grayscale(1);
+    transition: all 1s ease;
+  }
+  
+.slick-active img{
+    
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    opacity: 0.7;
+    filter: grayscale(1);
+  }
+  
+.slick-center img{
+    opacity: 1;
+    filter: grayscale(0);
+  }
+
+
+.name_servis{
+  margin-top: 100px;
+  text-align: right;
+  color: whitesmoke;
+  font-size: 55px;
+  font-family: Montserrat;
+  position: relative;
+}
+
+.deskriptons{
+  color: whitesmoke;
+  margin: 200px 0px;
+  
+  font-family: Montserrat;
+}
+
+
+.deskriptons .head{
+  text-align: center;
+  font-size: 55px;
+}
+
+.deskriptons .text{
+  font-size: 36px;
+  margin-top: 24px;
+}
+
+.zakaza{
+  text-align: right;
+}
+
+.zakaza button{
+
+  height: 70px;
+  width: 197px;
+  border-radius: 5px;
+  background-color: black;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  font-family: Montserrat;
+  font-size: 22px;
+  transition: 0.5s linear;
+  margin-bottom: 100px;
+  
+
+}
+
+.zakaza button:hover{
+
+  border: 1px solid #4ec03b;
+
+}
+
+.content{
+ padding: 0 200px;
+}
+
+.slick-slide img{
+    width: 400px;
+    height: 380px;
+  }
+
+@media(max-width: 1500px) {
+  
+  .slick-slide img{
+    width: 400px;
+    height: 380px;
+  }
+}
+
+@media(max-width: 1250px) {
+  
+  .slick-slide img{
+    width: 300px;
+    height: 280px;
+  }
+  .content{
+    padding: 0 100px;
+  }
+}
+
+@media(max-width: 960px) {
+  
+  .slick-slide img{
+    width: 200px;
+    height: 180px;
+    
+  }
+  
+  .deskriptons .text {
+
+      font-size: 21px;
+
+  }
+
+  .name_servis{
+    font-size: 39px;
+  }
+
+}
+
+@media(max-width: 800px) {
+
+  .deskriptons .text {
+    font-size: 25px;
+    text-align: center;
+  }
+
+}
+
+@media(max-width: 670px) {
+  
+  .slick-slide img{
+    width: 400px;
+    height: 380px;
+  }
+
+  .deskriptons {
+    margin: 100px 0px;
+  }
+  .content {
+    padding: 0 10px;
+  }
+  .deskriptons .text {
+    font-size: 20px;
+  }
+  .deskriptons .head {
+    font-size: 35px;
+  }
+  .name_servis {
+    font-size: 35px;
+  }
+  .zakaza button{
+    transform: scale(0.9);
+  }
+
+  .lofo{
+    left: -200px;
+  }
+
+  .name_servis{
+    text-align: center;
+  }
+}
+
+@media(max-width: 420px) {
+  
+  .slick-slide img{
+    width: 300px;
+    height: 280px;
+  }
+  .zakaza button{
+    transform: scale(0.8);
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: var(--gutter-medium) 0 var(--gutter-normal);
+  color:whitesmoke;
+}
+
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+body {
+  opacity: 0;
+  animation: all 5s;
+}
+
+#bod{
+opacity: 0;
+transition: 4s ease;
+}

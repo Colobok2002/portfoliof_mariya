@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Montserrat;
+    opacity: 0;
+    animation: ani 2.5s forwards;
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.zagolovok {
+    color: white;
+    text-align: center;
+}
+.news_tizer{
+    text-align: left;
+}
+
+.news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:white;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+}
+
+
+.news-cont {
+    color:white;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.content_img_rigth{
+    display: flex;
+    flex-direction: row;
+}
+
+.content_img_rigth img{
+    margin-right: 25px;
+    height: 250px;
+    width: auto;
+    border-radius: 50px 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 0;
+}
+
+@media(max-width: 1270px) {
+    .content_img_rigth img{
+        margin-right: 25px;
+        width: 300px;
+    }
+}
+
+
+@media(max-width: 940px) {
+    .content_img_rigth {
+        flex-direction: column;
+
+    }
+    .content_img_rigth img{
+        margin-right: 0px;
+        width: 250px;
+        order: 0;
+    }
+    .news{
+
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+
+@media(max-width: 760px) {
+    .news{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+
+.content_img_left{
+    display: flex;
+    flex-direction: row;
+}
+
+.content_img_left img{
+    margin-right: 25px;
+    height: 250px;
+    width: auto;
+    border-radius: 50px 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    order: 1;
+}
+
+@media(max-width: 1270px) {
+    .content_img_left img{
+        margin-right: 25px;
+        width: 300px;
+    }
+}
+
+
+@media(max-width: 940px) {
+    .content_img_left {
+        flex-direction: column;
+
+    }
+    .content_img_left img{
+        margin-right: 0px;
+        width: 250px;
+        order: 0;
+    }
+    .news{
+
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+
+@media(max-width: 760px) {
+    .news{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+
+
+
+
+
+

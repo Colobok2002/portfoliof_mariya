@@ -8,3 +8,4 @@ urlpatterns = [
     path('<slug:slug>', views.aboyt_keus),
 
 ]
+
