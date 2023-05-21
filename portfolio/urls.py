@@ -9,6 +9,9 @@ urlpatterns = [
     path('admin/',views.admin_redirect),
     path('admin', admin.site.urls),
     path(r'', include(('mainsite.urls', 'site'))),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+] 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'mainsite.views.referect_to_nome'

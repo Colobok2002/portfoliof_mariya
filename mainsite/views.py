@@ -1,6 +1,13 @@
 from django.shortcuts import render , redirect
+from django.http import FileResponse
 from .models import *
 from django.http import JsonResponse
+
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from PIL import Image
+
 # Create your views here.
 
 def index(request):
@@ -99,3 +106,28 @@ def referect_to_nome(request,exception):
     """Функциональная функция, которая возврашает с кодом 404 на главную страницу"""
 
     return redirect("/")
+
+
+def test_test(request):
+
+    try:
+
+        image = Image.open(BASE_DIR+request.path)
+
+        
+        try:
+            temp_image = 'temp.jpg'
+            image.save(temp_image, 'JPEG')
+            file = open(temp_image, 'rb')
+            response = FileResponse(file, content_type='image/jpeg')
+            return response
+        except:
+            temp_image = 'temp.png'
+            image.save(temp_image, 'PNG')
+            file = open(temp_image, 'rb')
+            response = FileResponse(file, content_type='image/png')
+            return response
+
+    except Exception as e:
+        print(e)
+        return JsonResponse({"flag":False})
